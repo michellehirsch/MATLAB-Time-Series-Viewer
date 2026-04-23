@@ -413,6 +413,8 @@ classdef TimeSeriesViewer < handle
             timeSec = seconds(tt.Time);
             values = tt.(varName);
 
+            ax.XLim=[0 max(timeSec)];           % always use Autoscale for XLim
+           
             plot(ax, timeSec, values, 'LineWidth', 1, ...
                 'Color', app.ColorOrder(1,:));
             xlabel(ax, 'Time (s)');
