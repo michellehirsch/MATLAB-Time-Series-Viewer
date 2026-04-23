@@ -312,7 +312,8 @@ classdef TimeSeriesViewer < handle
             end
             signalCols = signalCols(keep);
 
-            tt = timetable(timeVec, 'VariableNames', {'Time'});
+            Time = timeVec;
+            tt = timetable(Time);
             for k = 1:numel(signalCols)
                 tt.(signalCols{k}) = tbl.(signalCols{k});
             end
